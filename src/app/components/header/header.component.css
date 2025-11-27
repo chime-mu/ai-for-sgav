@@ -57,6 +57,31 @@
   outline-offset: 2px;
 }
 
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 0.25rem;
+}
+
+.github-link:hover {
+  color: #4a90e2;
+  transform: scale(1.1);
+}
+
+.github-link:focus-visible {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+.github-link svg {
+  display: block;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .header-content {
@@ -64,6 +89,7 @@
     align-items: flex-start;
     padding: 1rem;
     gap: 1rem;
+    position: relative;
   }
 
   .site-title {
@@ -78,5 +104,11 @@
     flex: 1;
     padding: 0.75rem 1rem;
     font-size: 0.95rem;
+  }
+
+  .github-link {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
   }
 }
