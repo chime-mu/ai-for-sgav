@@ -1,6 +1,15 @@
 <header class="app-header">
   <div class="header-content">
-    <h1 class="site-title">AI for SGAV</h1>
+    <h1 class="site-title">
+      <button
+        class="title-link"
+        (click)="selectView('home')"
+        [class.active]="activeView === 'home'"
+        aria-label="Gå til forsiden"
+      >
+        AI for SGAV
+      </button>
+    </h1>
     <nav class="tab-navigation">
       <button
         class="tab-button"

@@ -4,7 +4,9 @@
 ></app-header>
 
 <main>
-  @if (activeView() === 'slides') {
+  @if (activeView() === 'home') {
+    <app-home></app-home>
+  } @else if (activeView() === 'slides') {
     <app-slides-container></app-slides-container>
   } @else if (activeView() === 'exercises') {
     <app-exercises-container></app-exercises-container>

@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-export type ViewType = 'slides' | 'exercises' | 'history';
+export type ViewType = 'home' | 'slides' | 'exercises' | 'history';
 
 @Component({
   selector: 'app-header',
