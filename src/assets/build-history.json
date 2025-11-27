@@ -1,10 +1,54 @@
 {
   "metadata": {
-    "lastUpdated": "2025-11-27T09:11:48.604+00:00",
-    "totalCommits": 19,
+    "lastUpdated": "2025-11-27T11:04:47.912Z",
+    "totalCommits": 23,
     "extractedBy": "Claude Code - Build History extraction"
   },
   "commits": [
+    {
+      "sha": "0c0b397b415d61185997ad31e9e933191c1b1344",
+      "shaShort": "0c0b397",
+      "author": "Michael Arnoldus <ma@goodmonday.io>",
+      "timestamp": "2025-11-27T11:56:01+01:00",
+      "timestampReadable": "27. nov 2025, 11:56",
+      "summary": "feat: Add \"Best practices\" slide as second-to-last",
+      "fullMessage": "Inserted new slide about best practices before the final \"Hav det sjovt\" slide.\n\n**Changes:**\n\n**New Slide 16 - Best practices:**\n- Title: \"Best practices\"\n- Keywords: Klare prompts, iterér, version control, gennemgå koden\n- Details: Five central best practices for AI-assisted coding (in Danish):\n  1. Start with clear, specific prompts\n  2. Iterate and refine - first answer is rarely perfect\n  3. Use version control actively - commit often\n  4. Always review AI-generated code - you are responsible\n  5. Combine AI assistance with your expertise - AI is a tool, not replacement\n- Link to comprehensive guide: https://www.anthropic.com/engineering/claude-code-best-practices\n- Image: placeholder (slide-16-best-practices.jpg)\n- Duration: ~4 minutes\n\n**Slide Renumbering:**\n- Old slide 16 \"Hav det sjovt\" → New slide 17\n- Renamed image: slide-16-have-fun.jpg → slide-17-have-fun.jpg\n\n**Total slides:** 16 → 17 slides\n\n**Metadata:**\n- Updated version: 1.1 → 1.2\n- All content in Danish following existing conversational style\n\n**Validation:**\n✅ Valid JSON syntax\n✅ Production build succeeds (187.66 kB / 53.08 kB gzipped)\n✅ All slide numbers sequential (1-17)\n✅ Image file successfully renamed\n\n**New slide ID:** best-practices\n\nPrompt: \"Add a new slide next to last called 'Best practices'. Explain a few central best practices in the details. Provide a link to anthropic best practices page: https://www.anthropic.com/engineering/claude-code-best-practices\"\n\n🤖 Generated with Claude Code (https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>",
+      "prompt": "Add a new slide next to last called 'Best practices'. Explain a few central best practices in the details. Provide a link to anthropic best practices page: https://www.anthropic.com/engineering/claude-code-best-practices",
+      "phase": "Phase 5"
+    },
+    {
+      "sha": "107c5b6808936d5481d855c4b59ff86dfe3564ee",
+      "shaShort": "107c5b6",
+      "author": "Michael Arnoldus <ma@goodmonday.io>",
+      "timestamp": "2025-11-27T11:13:03+01:00",
+      "timestampReadable": "27. nov 2025, 11:13",
+      "summary": "feat: Expand slide 9 into 5 slides and add MCP and Skills slides",
+      "fullMessage": "Expanded practical techniques into detailed slides and added advanced topics.\n\n**Changes:**\n\n**Slide Expansion (old slide 9 → new slides 9-13):**\n1. **Slide 9 - Planlægning**: Plan before building, use stronger models for complex tasks, write plans to markdown files\n2. **Slide 10 - Byg Kontekst**: Provide all relevant information, save context to files (README, ARCHITECTURE.md)\n3. **Slide 11 - Retry**: LLMs make mistakes, use version control actively, commit working states frequently\n4. **Slide 12 - Feedback - Konstant**: Build in small steps, get constant feedback, write and run tests often\n5. **Slide 13 - Feedback - Læring**: Capture learning when AI solves problems, document in markdown for future sessions\n\n**New Advanced Slides:**\n6. **Slide 14 - MCP (Model Context Protocol)**: Explain MCP as plugins for AI, examples (database access, APIs, Playwright tests), extends AI capabilities\n7. **Slide 15 - Skills**: Reusable instructions for Claude, team sharing, specialization, link to https://www.claude.com/blog/skills\n\n**Slide Renumbering:**\n- Old slide 10 \"Hav det sjovt\" → New slide 16\n- Renamed image: slide-10-have-fun.jpg → slide-16-have-fun.jpg\n\n**Total slides:** 10 → 16 slides\n\n**Metadata:**\n- Updated version: 1.0 → 1.1\n- All content in Danish following existing conversational style\n\n**Validation:**\n✅ Valid JSON syntax\n✅ Production build succeeds (187.66 kB / 53.08 kB gzipped)\n✅ All slide numbers sequential (1-16)\n✅ Image file successfully renamed\n\n**New slide IDs:**\n- planning\n- build-context\n- retry\n- feedback-constant\n- feedback-learning\n- mcp\n- skills\n\nPrompt: \"Expand slide 9 to 5 slides: Planning, Build context, Retry, Feedback 1 (constant), Feedback 2 (learning). Insert MCP slide explaining Model Context Protocol with examples. Insert Skills slide explaining the feature with link to https://www.claude.com/blog/skills. All text in Danish.\"\n\n🤖 Generated with Claude Code (https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>",
+      "prompt": "Expand slide 9 to 5 slides: Planning, Build context, Retry, Feedback 1 (constant), Feedback 2 (learning). Insert MCP slide explaining Model Context Protocol with examples. Insert Skills slide explaining the feature with link to https://www.claude.com/blog/skills. All text in Danish.",
+      "phase": "Phase 5"
+    },
+    {
+      "sha": "a49d75d4e79c07442c6726607d2cd8cff02664e3",
+      "shaShort": "a49d75d",
+      "author": "Michael Arnoldus <ma@goodmonday.io>",
+      "timestamp": "2025-11-27T10:19:26+01:00",
+      "timestampReadable": "27. nov 2025, 10:19",
+      "summary": "feat: Add GitHub link with icon to header",
+      "fullMessage": "Added clickable GitHub logo to the header that links to the repository.\n\n**Changes:**\n\n**HTML (header.component.html):**\n- Added GitHub link with inline SVG icon\n- Positioned to the right of tab navigation\n- External link with target=\"_blank\" and rel=\"noopener noreferrer\"\n- Accessibility attributes: aria-label and title\n- GitHub's official Octocat logo SVG (28x28px)\n\n**CSS (header.component.css):**\n- Styled GitHub link to match header aesthetic\n- Default color: #666 (matches inactive tab state)\n- Hover color: #4a90e2 (matches active tab blue)\n- Hover effect: slight scale transform (1.1x)\n- Smooth transition: 0.2s ease\n- Focus outline: 2px solid blue (consistent with buttons)\n- Responsive: positioned absolutely in top-right on mobile (<768px)\n\n**Features:**\n✅ Links to https://github.com/chime-mu/ai-for-sgav\n✅ Inline SVG - no dependencies, scalable, styleable\n✅ Smooth hover animations\n✅ Proper accessibility (aria-label, title, focus states)\n✅ Mobile-responsive positioning\n✅ Matches existing header color scheme\n\n**Testing:**\n✅ Production build succeeds\n✅ Bundle size: 187.66 kB (53.08 kB gzipped)\n✅ No TypeScript compilation errors\n\nPrompt: \"Add a github logo in the top bar and link to the repo\"\n\n🤖 Generated with Claude Code (https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>",
+      "prompt": "Add a github logo in the top bar and link to the repo",
+      "phase": "Phase 5"
+    },
+    {
+      "sha": "523a853360d3dd08ef674576ac1ef12a91d64a3b",
+      "shaShort": "523a853",
+      "author": "Michael Arnoldus <ma@goodmonday.io>",
+      "timestamp": "2025-11-27T10:13:10+01:00",
+      "timestampReadable": "27. nov 2025, 10:13",
+      "summary": "docs: Update build-history.json with 3 new commits",
+      "fullMessage": "Added 3 new commits to build history:\n- 1eebfd2: feat: Add professional images for slides 1-5\n- 52909bb: feat: Hide placeholder images that fail to load\n- 94487f5: docs: Update build-history.json with 5 new commits\n\nUpdated metadata:\n- totalCommits: 16 → 19\n- lastUpdated: 2025-11-27T09:11:48.604+00:00\n\nAll new commits added to the beginning of the array (newest-first order).\nAll existing commits preserved unchanged.\n\nValidation:\n✅ Valid JSON syntax\n✅ All 19 commits present (matches git repository)\n✅ AI prompts extracted correctly\n✅ Danish timestamps formatted\n✅ Phase classifications assigned\n\nPrompt: \"@doc/BUILD-HISTORY-UPDATE-GUIDE.md Update the build history JSON file. Only add new entries, don't change existing ones.\"\n\n🤖 Generated with Claude Code (https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>",
+      "prompt": "@doc/BUILD-HISTORY-UPDATE-GUIDE.md Update the build history JSON file. Only add new entries, don't change existing ones.",
+      "phase": "Documentation"
+    },
     {
       "sha": "1eebfd290eefcd985903b552dbc2e6d7ecee5487",
       "shaShort": "1eebfd2",
