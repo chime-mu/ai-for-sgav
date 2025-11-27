@@ -1,0 +1,180 @@
+.exercise-item {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.exercise-item:hover {
+  border-color: #4a90e2;
+  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.1);
+}
+
+.exercise-item.expanded {
+  border-color: #4a90e2;
+}
+
+.exercise-header {
+  padding: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.exercise-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+.exercise-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  flex: 1;
+}
+
+.difficulty-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.difficulty-beginner {
+  background: #d4edda;
+  color: #155724;
+}
+
+.difficulty-intermediate {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.difficulty-advanced {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.exercise-short-description {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.5;
+}
+
+.estimated-time {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.toggle-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #4a90e2;
+  transition: all 0.2s ease;
+}
+
+.toggle-button:hover {
+  background: #4a90e2;
+  color: white;
+  border-color: #4a90e2;
+}
+
+.exercise-details {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  border-top: 1px solid #e0e0e0;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.full-description {
+  margin-top: 1rem;
+}
+
+.full-description p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+.resources {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+.resources h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.75rem 0;
+}
+
+.resources ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resources li {
+  margin-bottom: 0.5rem;
+}
+
+.resources a {
+  color: #4a90e2;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.resources a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .exercise-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .exercise-title {
+    font-size: 1.2rem;
+  }
+
+  .difficulty-badge {
+    align-self: flex-start;
+  }
+
+  .exercise-short-description {
+    font-size: 1rem;
+  }
+}

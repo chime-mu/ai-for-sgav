@@ -1,1 +1,12 @@
-<app-slides-container></app-slides-container>
+<app-header
+  [activeView]="activeView()"
+  (viewChange)="onViewChange($event)"
+></app-header>
+
+<main>
+  @if (activeView() === 'slides') {
+    <app-slides-container></app-slides-container>
+  } @else {
+    <app-exercises-container></app-exercises-container>
+  }
+</main>

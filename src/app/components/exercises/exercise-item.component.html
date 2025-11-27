@@ -1,0 +1,39 @@
+<div class="exercise-item" [class.expanded]="isExpanded()">
+  <div class="exercise-header" (click)="toggleExpanded()">
+    <div class="exercise-title-row">
+      <h3 class="exercise-title">{{ exercise.title }}</h3>
+      <span class="difficulty-badge" [ngClass]="getDifficultyClass()">
+        {{ getDifficultyLabel() }}
+      </span>
+    </div>
+    <p class="exercise-short-description">{{ exercise.shortDescription }}</p>
+    @if (exercise.estimatedTime) {
+      <span class="estimated-time">⏱️ {{ exercise.estimatedTime }}</span>
+    }
+    <button class="toggle-button" [attr.aria-expanded]="isExpanded()">
+      {{ isExpanded() ? '▼ Skjul detaljer' : '▶ Læs mere' }}
+    </button>
+  </div>
+
+  @if (isExpanded()) {
+    <div class="exercise-details">
+      <div class="full-description">
+        <p>{{ exercise.fullDescription }}</p>
+      </div>
+      @if (exercise.resources && exercise.resources.length > 0) {
+        <div class="resources">
+          <h4>Ressourcer:</h4>
+          <ul>
+            @for (resource of exercise.resources; track resource.url) {
+              <li>
+                <a [href]="resource.url" target="_blank" rel="noopener noreferrer">
+                  {{ resource.title }}
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  }
+</div>

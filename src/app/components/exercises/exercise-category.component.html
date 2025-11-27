@@ -1,0 +1,8 @@
+<div class="exercise-category">
+  <h2 class="category-title">{{ category }}</h2>
+  <div class="exercises-list">
+    @for (exercise of exercises; track exercise.id) {
+      <app-exercise-item [exercise]="exercise"></app-exercise-item>
+    }
+  </div>
+</div>

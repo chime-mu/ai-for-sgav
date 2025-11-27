@@ -1,0 +1,29 @@
+<div class="exercises-container">
+  <div class="exercises-header">
+    <h1>Øvelser</h1>
+    <p class="intro-text">
+      Vælg en øvelse der passer til dit niveau og dine interesser. Klik på en øvelse for at se detaljer.
+    </p>
+  </div>
+
+  @if (exercisesByCategory$ | async; as categories) {
+    @if (categories.length > 0) {
+      <div class="categories-list">
+        @for (categoryGroup of categories; track categoryGroup.category) {
+          <app-exercise-category
+            [category]="categoryGroup.category"
+            [exercises]="categoryGroup.exercises"
+          ></app-exercise-category>
+        }
+      </div>
+    } @else {
+      <div class="no-exercises">
+        <p>Ingen øvelser tilgængelige endnu.</p>
+      </div>
+    }
+  } @else {
+    <div class="loading">
+      <p>Indlæser øvelser...</p>
+    </div>
+  }
+</div>

@@ -1,0 +1,23 @@
+<header class="app-header">
+  <div class="header-content">
+    <h1 class="site-title">AI for SGAV</h1>
+    <nav class="tab-navigation">
+      <button
+        class="tab-button"
+        [class.active]="activeView === 'slides'"
+        (click)="selectView('slides')"
+        [attr.aria-current]="activeView === 'slides' ? 'page' : null"
+      >
+        Principper
+      </button>
+      <button
+        class="tab-button"
+        [class.active]="activeView === 'exercises'"
+        (click)="selectView('exercises')"
+        [attr.aria-current]="activeView === 'exercises' ? 'page' : null"
+      >
+        Øvelser
+      </button>
+    </nav>
+  </div>
+</header>

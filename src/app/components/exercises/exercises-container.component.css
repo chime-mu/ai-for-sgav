@@ -1,0 +1,61 @@
+.exercises-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.exercises-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.exercises-header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.categories-list {
+  margin-top: 2rem;
+}
+
+.no-exercises,
+.loading {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.no-exercises p,
+.loading p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .exercises-container {
+    padding: 1rem;
+  }
+
+  .exercises-header h1 {
+    font-size: 2rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .exercises-header {
+    margin-bottom: 2rem;
+  }
+}
