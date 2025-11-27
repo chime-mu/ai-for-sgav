@@ -38,3 +38,29 @@ export interface Content {
   exercises: Exercise[];
   angularJokes: string[];
 }
+
+export interface BuildHistoryMetadata {
+  lastUpdated: string;
+  totalCommits: number;
+  extractedBy: string;
+}
+
+export interface Commit {
+  sha: string;
+  shaShort: string;
+  author: string;
+  timestamp: string;
+  timestampReadable: string;
+  summary: string;
+  fullMessage: string;
+  prompt: string | null;
+  filesChanged?: number;
+  insertions?: number;
+  deletions?: number;
+  phase: string;
+}
+
+export interface BuildHistory {
+  metadata: BuildHistoryMetadata;
+  commits: Commit[];
+}
