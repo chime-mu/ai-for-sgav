@@ -1,9 +1,10 @@
 import { Component, signal, inject, OnInit } from '@angular/core';
 import { ContentLoaderService } from './services/content-loader.service';
+import { SlidesContainerComponent } from './components/slides/slides-container.component';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [SlidesContainerComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

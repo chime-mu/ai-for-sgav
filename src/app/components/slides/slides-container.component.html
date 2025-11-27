@@ -1,0 +1,67 @@
+<div class="slides-container">
+  <div class="keyboard-hint">
+    <p>Brug ← → piletaster til at navigere</p>
+  </div>
+
+  @if (currentSlide$ | async; as slide) {
+    <div class="slide-content">
+      <h1 class="slide-title">{{ slide.title }}</h1>
+
+      <div class="slide-keywords">
+        <p>{{ slide.keywords }}</p>
+      </div>
+
+      @if (slide.image) {
+        <div class="slide-image">
+          <img
+            [src]="'assets/' + slide.image"
+            [alt]="slide.imageAlt"
+            (error)="$event.target.src='/assets/images/placeholder.jpg'"
+          />
+        </div>
+      }
+
+      <details class="slide-details">
+        <summary>Læs mere</summary>
+        <div class="details-content">
+          <p>{{ slide.details }}</p>
+        </div>
+      </details>
+    </div>
+  } @else {
+    <div class="loading">
+      <p>Indlæser slides...</p>
+    </div>
+  }
+
+  <div class="progress-container">
+    @if ((currentIndex$ | async) !== null && (totalSlides$ | async); as total) {
+      <div class="progress-info">
+        <span class="progress-counter">{{ (currentIndex$ | async)! + 1 }} / {{ total }}</span>
+        <div class="progress-bar">
+          <div
+            class="progress-fill"
+            [style.width.%]="(((currentIndex$ | async)! + 1) / total) * 100"
+          ></div>
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="navigation-buttons">
+    <button
+      (click)="goPrevious()"
+      [disabled]="(currentIndex$ | async) === 0"
+      class="nav-button prev-button"
+    >
+      ← Forrige
+    </button>
+    <button
+      (click)="goNext()"
+      [disabled]="(currentIndex$ | async)! >= (totalSlides$ | async)! - 1"
+      class="nav-button next-button"
+    >
+      Næste →
+    </button>
+  </div>
+</div>
