@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, OnDestroy } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SlidesStateService } from '../../services/slides-state.service';
 import { KeyboardNavigationService } from '../../services/keyboard-navigation.service';
@@ -20,6 +20,9 @@ export class SlidesContainerComponent implements OnInit, OnDestroy {
   protected currentIndex$ = this.slidesState.currentIndex$;
   protected totalSlides$ = this.slidesState.totalSlides$;
 
+  // Track if current slide image loaded successfully
+  protected imageLoaded = signal(true);
+
   ngOnInit(): void {
     // Subscribe to keyboard navigation events
     this.keyboardNav.navigation$
@@ -30,6 +33,13 @@ export class SlidesContainerComponent implements OnInit, OnDestroy {
         } else {
           this.slidesState.previous();
         }
+      });
+
+    // Reset image loaded state when slide changes
+    this.currentIndex$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(() => {
+        this.imageLoaded.set(true);
       });
   }
 
@@ -45,5 +55,14 @@ export class SlidesContainerComponent implements OnInit, OnDestroy {
 
   protected goPrevious(): void {
     this.slidesState.previous();
+  }
+
+  // Image load handlers
+  protected onImageError(): void {
+    this.imageLoaded.set(false);
+  }
+
+  protected onImageLoad(): void {
+    this.imageLoaded.set(true);
   }
 }

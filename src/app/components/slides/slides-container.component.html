@@ -11,12 +11,13 @@
         <p>{{ slide.keywords }}</p>
       </div>
 
-      @if (slide.image) {
+      @if (slide.image && imageLoaded()) {
         <div class="slide-image">
           <img
             [src]="'assets/' + slide.image"
             [alt]="slide.imageAlt"
-            (error)="$event.target.src='/assets/images/placeholder.jpg'"
+            (load)="onImageLoad()"
+            (error)="onImageError()"
           />
         </div>
       }
