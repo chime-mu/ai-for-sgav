@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "version": "1.1",
+    "version": "1.2",
     "lastUpdated": "2025-11-27",
     "workshopDuration": "150 minutes"
   },
@@ -156,12 +156,22 @@
       "duration": "~4 minutes"
     },
     {
-      "id": "have-fun",
+      "id": "best-practices",
       "slideNumber": 16,
+      "title": "Best practices",
+      "keywords": "Klare prompts, iterér, version control, gennemgå koden",
+      "details": "Centrale best practices for AI-assisteret kodning: 1) Start med klare, specifikke prompts - vær præcis om hvad du vil have. 2) Iterér og forbedr - første svar er sjældent perfekt. 3) Brug version control aktivt - commit ofte så du kan rulle tilbage. 4) Gennemgå altid AI-genereret kode - AI laver fejl, du er ansvarlig. 5) Kombiner AI-assistance med din ekspertise - AI er et værktøj, ikke en erstatning. Læs mere om best practices: https://www.anthropic.com/engineering/claude-code-best-practices",
+      "image": "images/slides/slide-16-best-practices.jpg",
+      "imageAlt": "Tjekliste eller kvalitetsstjerne",
+      "duration": "~4 minutes"
+    },
+    {
+      "id": "have-fun",
+      "slideNumber": 17,
       "title": "Hav det sjovt",
       "keywords": "Læring kræver frihed til at lege",
       "details": "Den bedste måde at lære AI-kodning på er gennem eksperimenter og leg. Byg noget tosset. Prøv det absurde. Se hvad der sker når du prompter på mærkelige måder. Læring sker ikke kun gennem strukturerede øvelser, men også gennem nysgerrighed og exploration. I dag har I frihed til at lege - brug den.",
-      "image": "images/slides/slide-16-have-fun.jpg",
+      "image": "images/slides/slide-17-have-fun.jpg",
       "imageAlt": "Legende figurer eller farverige former",
       "duration": "~2 minutes"
     }
