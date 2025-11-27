@@ -111,4 +111,35 @@ The rotating footer component is designed to be built live during the workshop i
 
 ## Deployment
 
-Deploy to Netlify with automatic builds from GitHub. Configure two subdomain environments for live and backup versions.
+Deploy to Netlify with automatic builds from GitHub. Configuration is in `netlify.toml`:
+
+```toml
+[build]
+  publish = "dist/ai-for-sgav/browser"
+  command = "npm run build"
+```
+
+### Netlify Setup
+1. Connect GitHub repository to Netlify
+2. Build command: `npm run build`
+3. Publish directory: `dist/ai-for-sgav/browser`
+4. Configure two subdomain environments:
+   - `live.ai-for-sgav.dk` - for live building during workshop
+   - `backup.ai-for-sgav.dk` - pre-built backup version
+
+### Production Build
+Run `npm run build` to create production build. Output will be in `dist/ai-for-sgav/browser`.
+Bundle size: ~48 kB (gzipped)
+
+## Current Status
+
+✅ **Implemented Features:**
+- **Phase 1:** Project foundation with Angular, content structure, and loader service
+- **Phase 2:** Slides feature with keyboard navigation and presentation mode
+- **Phase 3:** Exercises feature with collapsible items and tab navigation
+- **Phase 5:** Polish, placeholder images, global styles, and deployment config
+
+**Not Implemented:**
+- Phase 4: Rotating footer with Angular jokes (deferred)
+
+**Ready for deployment to Netlify**
