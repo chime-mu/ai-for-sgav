@@ -47,24 +47,29 @@ src/app/components/
 
 ## Development Commands
 
-Since the Angular project hasn't been created yet, standard Angular CLI commands will apply:
+This project uses Angular CLI locally via npm scripts. Angular CLI is NOT installed globally.
 
 ```bash
-# Create the project (standalone components preferred)
-ng new ai-for-sgav --routing=false --style=css
+# Development server (recommended)
+npm start
 
-# Development server
-ng serve
+# Or using npx
+npx ng serve
 
 # Build for production
-ng build
+npm run build
 
 # Run tests
-ng test
+npm test
+
+# Generate new component
+npx ng generate component components/component-name
 
 # Run single test file
-ng test --include='**/component-name.component.spec.ts'
+npx ng test --include='**/component-name.component.spec.ts'
 ```
+
+**Important:** Always use `npm start` or `npx ng` commands. Do not use bare `ng` commands as Angular CLI is not globally installed.
 
 ## Live Demo Component
 
