@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "lastUpdated": "2025-11-27T09:00:00+01:00",
+    "totalCommits": 11,
+    "extractedBy": "Claude Code - Phase 1 Build History extraction"
+  },
+  "commits": [
+    {
+      "sha": "d098d7135731dac225ef2502ef0fa1e02014bddd",
+      "shaShort": "d098d71",
+      "author": "Michael Arnoldus <ma@goodmonday.io>",
+      "timestamp": "2025-11-27T08:41:21+01:00",
+      "timestampReadable": "27. nov 2025, 08:41",
+      "summary": "Add comprehensive implementation plan for Build History feature",
+      "fullMessage": "Created detailed implementation plan for a new \"Byggehistorik\" (Build History) feature that will display how this site was built using AI assistance.\n\nPlan includes:\n- Feature overview and architecture decisions\n- Data structure for commits (SHA, author, timestamp, summary, full message, prompts)\n- Git extraction strategy to create build-history.json\n- 5 implementation phases with detailed steps:\n  - Phase 1: Data extraction and JSON file creation\n  - Phase 2: TypeScript models and data loading\n  - Phase 3: Build history components (container + list item)\n  - Phase 4: Navigation integration (3rd tab)\n  - Phase 5: Styling and polish\n- Component architecture following existing patterns\n- TypeScript interfaces for Commit and BuildHistory\n- Styling guidelines with phase badge color scheme\n- Testing checklist and accessibility requirements\n- Timeline estimate: 2.5-4 hours\n\nThe feature will showcase the meta-demonstration aspect by displaying all git commits with their AI prompts, providing transparency and educational value for workshop participants.",
+      "prompt": "Let's create a new top level item that will display how this site was built. Do this by extracting all commit message and convert to a JSON file. For each commit we should have - The commit SHA so we can regognise which commit we already have in the list when we need to update - The full commit message - A nice summary, 1-2 lines - A timestamp. Build a page that will show a list of the summaries with timestamp and a way to open each summary to see all details. Write a plan for building this in @doc",
+      "phase": "Documentation"
+    },
+    {
+      "sha": "3e2e8446a5b124e9425ab7179dae9d2f75b370c0",
+      "shaShort": "3e2e844",
+      "author": "Michael Arnoldus <ma@goodmonday.io>",
+      "timestamp": "2025-11-27T08:30:29+01:00",
+      "timestampReadable": "27. nov 2025, 08:30",
+      "summary": "Update CLAUDE.md with comprehensive implementation details",
+      "fullMessage": "Updated CLAUDE.md to reflect the current state of the fully-built application with:\n\n- Added Git Commit Guidelines section requiring prompts in commit messages\n- Expanded Architecture Decisions with Angular 19, signals, and state management details\n- Updated Content Structure with actual counts (10 slides, 10 exercises, 5 categories)\n- Completely rewrote Key Components section with all 6+ components and detailed descriptions\n- Added new Services section documenting ContentLoader, SlidesState, and KeyboardNavigation services\n- Added new Models section with TypeScript interface definitions\n- Updated Content JSON Schema to match actual structure with metadata, categories, resources\n- Added Global Styles section documenting CSS features and accessibility\n- Enhanced Special Requirements with accessibility features\n- Updated Deployment section with SPA redirect configuration\n- Rewrote Current Status section with detailed phase-by-phase breakdown\n\nThe documentation now provides a complete picture of the implemented application and establishes the requirement for including prompts in all commit messages.",
+      "prompt": "Update CLAUDE.md - Make sure it has everything necessary given we have now built most of the app. Also add commit messages should include the prompts given to claude - including this",
+      "phase": "Documentation"
+    },
+    {
+      "sha": "c2f3adfd82ca7faee9a9ca0d4db60a16105cb13c",
+      "shaShort": "c2f3adf",
+      "author": "Michael Arnoldus <ma@goodmonday.io>",
+      "timestamp": "2025-11-27T08:11:30+01:00",
+      "timestampReadable": "27. nov 2025, 08:11",
+      "summary": "Phase 5 - Polish, placeholder images, and deployment configuration",
+      "fullMessage": "Implemented:\n- Created 10 placeholder SVG images:\n  - Colorful gradient backgrounds (purple, pink, blue, green, yellow, red)\n  - Large slide numbers (1-10) for easy identification\n  - Slide titles in Danish\n  - Saved as .jpg files in src/assets/images/slides/\n  - Each 800x600px SVG format\n  - Professional looking placeholders ready for replacement\n\n- Added comprehensive global styles to src/styles.css:\n  - CSS reset with box-sizing border-box\n  - System font stack for better performance\n  - Smooth scroll behavior\n  - Focus-visible styles for accessibility (2px blue outline)\n  - Consistent link styles with hover effects\n  - Responsive image defaults\n  - Utility class for screen readers (.sr-only)\n  - Light gray background (#f5f5f5) for visual comfort\n\n- Polished UI/UX and accessibility:\n  - Updated index.html lang attribute to \"da\" (Danish)\n  - Added descriptive meta tags (description, author)\n  - Improved page title: \"AI for SGAV - Workshop om AI i kodning\"\n  - Enhanced viewport meta tag\n  - All focus states now visible for keyboard navigation\n\n- Created netlify.toml deployment configuration:\n  - Build command: npm run build\n  - Publish directory: dist/ai-for-sgav/browser\n  - SPA redirect rule (/* → /index.html)\n  - Ready for Netlify deployment\n\n- Updated documentation:\n  - CLAUDE.md: Added deployment section with Netlify setup instructions\n  - CLAUDE.md: Added current project status (implemented features)\n  - CLAUDE.md: Documented bundle size (~48 kB gzipped)\n  - CLAUDE.md: Listed all completed phases\n\n- Production build verification:\n  - Successfully built with npm run build\n  - Bundle size: 165.69 kB raw / 47.95 kB gzipped\n  - No build errors or warnings\n  - Output in dist/ai-for-sgav/browser\n  - Ready for production deployment\n\nFeatures Summary:\n✅ 10 slides with keyboard navigation and progress tracking\n✅ 10 exercises grouped by difficulty with collapsible details\n✅ Tab navigation between Principper and Øvelser\n✅ Responsive design (mobile, tablet, desktop)\n✅ Accessibility features (keyboard nav, focus states, ARIA labels)\n✅ Professional styling with smooth animations\n✅ Production-ready build\n✅ Deployment configuration complete",
+      "prompt": "Let's drop the jokes for now and skip to phase 5. Plan",
+      "phase": "Phase 5"
+    },
+    {
+      "sha": "0d50a522fedbf633962fd1466f9d4f329c509201",
+      "shaShort": "0d50a52",
+      "author": "Michael Arnoldus <ma@goodmonday.io>",
+      "timestamp": "2025-11-27T07:58:44+01:00",
+      "timestampReadable": "27. nov 2025, 07:58",
+      "summary": "Phase 3 - Exercises feature with collapsible items and tab navigation",
+      "fullMessage": "Implemented:\n- Created ExerciseItemComponent:\n  - Collapsible UI using signal for state management\n  - Displays title, difficulty badge, short description\n  - Expandable full description section\n  - Shows estimated time and optional resources\n  - Difficulty badges color-coded (beginner=green, intermediate=yellow, advanced=red)\n  - Danish labels: \"Begynder\", \"Øvet\", \"Avanceret\"\n  - Smooth expand/collapse animations\n  - Responsive card-based design\n\n- Created ExerciseCategoryComponent:\n  - Groups exercises by category (e.g., \"Start her\", \"Test og kvalitet\")\n  - Category header with underline styling\n  - Loops through exercises and displays ExerciseItemComponent\n  - Visual separation between categories\n\n- Created ExercisesContainerComponent:\n  - Injects ContentLoaderService to get exercises\n  - Groups exercises by category using Map\n  - Displays header: \"Øvelser\" with intro text\n  - Scroll-friendly list layout (not slides)\n  - Responsive padding and typography\n\n- Created HeaderComponent:\n  - Two tabs: \"Principper\" and \"Øvelser\"\n  - Active state styling with bottom border\n  - Emits viewChange events\n  - Sticky header with shadow\n  - Fully accessible (aria-current attributes)\n  - Responsive design (stacks on mobile)\n\n- Updated App component:\n  - Added signal for activeView state\n  - Imports HeaderComponent and ExercisesContainerComponent\n  - Conditional rendering: shows slides OR exercises based on activeView\n  - View switching logic with onViewChange() method\n  - Clean header + main layout\n\n- Styling highlights:\n  - Color-coded difficulty badges for visual clarity\n  - Card-based exercise layout with hover effects\n  - Smooth animations for expand/collapse\n  - Professional typography and spacing\n  - Responsive breakpoints for mobile/tablet/desktop\n  - Sticky header for easy navigation\n\n- Tested successfully:\n  - Build compiles without errors\n  - Bundle size: 67.31 kB (appropriate for added features)\n  - Tab navigation works\n  - All exercises grouped by category correctly",
+      "prompt": "It works. My bad. Let's continue with a plan for phase 3",
+      "phase": "Phase 3"
+    },
+    {
+      "sha": "9aed60691fde526e38148e0e33cafe11a811c8e5",
+      "shaShort": "9aed606",
+      "author": "Michael Arnoldus <ma@goodmonday.io>",
+      "timestamp": "2025-11-27T07:47:27+01:00",
+      "timestampReadable": "27. nov 2025, 07:47",
+      "summary": "Configure angular.json to serve src/assets directory",
+      "fullMessage": "Issue:\nThe content.json file was not accessible at /assets/content.json because angular.json was only configured to serve assets from the \"public\" folder, but our content was in \"src/assets/\".\n\nFix:\nAdded src/assets to the assets configuration in angular.json:\n- Input: \"src/assets\"\n- Output: \"/assets/\"\n- Glob: \"**/*\"\n\nThis ensures content.json and all images in src/assets/images/ are properly served by the Angular dev server.\n\nVerified:\n- http://localhost:4200/assets/content.json now returns the JSON content\n- All 10 slides are accessible\n- Dev server builds successfully",
+      "prompt": "It doesn't seem to work. Do we have content?",
+      "phase": "Fix"
+    },
+    {
+      "sha": "3e4f004085629d0d9045d27b4570094b21c7d507",
+      "shaShort": "3e4f004",
+      "author": "Michael Arnoldus <ma@goodmonday.io>",
+      "timestamp": "2025-11-27T07:41:43+01:00",
+      "timestampReadable": "27. nov 2025, 07:41",
+      "summary": "Phase 2 - Slides feature with keyboard navigation and presentation mode",
+      "fullMessage": "Implemented:\n- Created SlidesStateService:\n  - Manages current slide index with BehaviorSubject\n  - Provides observables: currentSlide$, currentIndex$, totalSlides$\n  - Navigation methods: next(), previous(), goToSlide(), reset()\n  - Bounds checking to prevent out-of-range navigation\n\n- Created KeyboardNavigationService:\n  - Listens for ArrowLeft/ArrowRight keyboard events\n  - Emits 'next' or 'previous' navigation directions\n  - Prevents default scroll behavior on arrow keys\n  - Can be started/stopped programmatically\n\n- Created SlidesContainerComponent:\n  - Integrated slide display, progress indicator, and navigation buttons\n  - Subscribes to keyboard navigation events\n  - Uses async pipe for reactive updates\n  - Features:\n    * Large, readable slide title and keywords\n    * Professional image styling with borders and shadows\n    * Collapsible details section using <details> element\n    * Progress counter (e.g., \"3/10\")\n    * Visual progress bar with gradient\n    * Navigation buttons with disabled states\n    * Keyboard hint text in Danish\n    * Responsive design for mobile, tablet, desktop\n    * Fullscreen presentation mode support\n\n- Updated App component:\n  - Replaced Angular boilerplate with slides container\n  - Imports SlidesContainerComponent\n  - Clean, minimal app template\n\n- Styling highlights:\n  - Large fonts for projector visibility (3rem title, 1.8rem keywords)\n  - High contrast colors for readability\n  - Professional image presentation with shadows\n  - Smooth transitions and animations\n  - Mobile-responsive breakpoints\n  - Support for screens up to 1400px+ (4rem title)\n\n- Tested successfully:\n  - Build compiles without errors\n  - Bundle size: 28.10 kB (optimized)\n  - Dev server runs on http://localhost:4201/",
+      "prompt": "Let's continue with phase 2. Plan",
+      "phase": "Phase 2"
+    },
+    {
+      "sha": "bfa44e1715767a2141861993cb3614664301c181",
+      "shaShort": "bfa44e1",
+      "author": "Michael Arnoldus <ma@goodmonday.io>",
+      "timestamp": "2025-11-27T07:33:09+01:00",
+      "timestampReadable": "27. nov 2025, 07:33",
+      "summary": "Update README and CLAUDE.md with correct npm/npx commands",
+      "fullMessage": "Changes:\n- Updated README-angular.md to use npm/npx commands instead of bare ng commands\n- Added npm start as the recommended way to run dev server\n- Provided npx ng alternatives for all Angular CLI commands\n- Added project description and links to documentation files\n- Updated CLAUDE.md with correct development commands\n- Added explicit warning that Angular CLI is not globally installed\n\nThis ensures developers can run the project without needing to install Angular CLI globally.",
+      "prompt": "When running ng serve i get zsh: command not found: ng. Please adjust the README accordingly",
+      "phase": "Documentation"
+    },
+    {
+      "sha": "b905ed0f9647d461854c4052b9c85bd3e88484f1",
+      "shaShort": "b905ed0",
+      "author": "Michael Arnoldus <ma@goodmonday.io>",
+      "timestamp": "2025-11-27T07:29:10+01:00",
+      "timestampReadable": "27. nov 2025, 07:29",
+      "summary": "Phase 1 - Project foundation with Angular, content structure, and loader service",
+      "fullMessage": "Implemented:\n- Created Angular 21 project with standalone components\n- Set up directory structure:\n  - src/app/components/ (slides, exercises, footer, header)\n  - src/app/services/\n  - src/app/models/\n  - src/assets/images/slides/\n- Created TypeScript models for Content, Slide, Exercise with full type safety\n- Created content.json with all 10 slides and 10 exercises from PRD\n- Built ContentLoaderService with:\n  - HttpClient for loading JSON\n  - BehaviorSubject for caching\n  - Separate Observables for slides$, exercises$, jokes$\n  - Error handling and reload capability\n- Updated app.config.ts to provide HttpClient\n- Added content loading test in App component\n- Verified build succeeds with `ng serve`",
+      "prompt": "Make a plan for phase 1",
+      "phase": "Phase 1"
+    },
+    {
+      "sha": "58438194271523a96afe4e3f1f26c56288e484b1",
+      "shaShort": "5843819",
+      "author": "Michael Arnoldus <ma@goodmonday.io>",
+      "timestamp": "2025-11-27T07:10:51+01:00",
+      "timestampReadable": "27. nov 2025, 07:10",
+      "summary": "Add comprehensive implementation plan for AI workshop site",
+      "fullMessage": "Created detailed implementation plan covering:\n- Architecture decisions (image storage, content structure, commit strategy)\n- 5 implementation phases with specific tasks and prompts\n- Component architecture and service responsibilities\n- Technical considerations (accessibility, keyboard nav, styling)\n- Testing checklist and deployment configuration\n- Timeline estimate: 12-17 hours",
+      "prompt": "Make a plan for building the site. It is important to keep content in the JSON file separate from code so we can adjust them individually. Figure out a way to store images that are connected to the content. When building the site, we should use the prompt to claude code in the commit message, so it's possible to see after the fact how this site was built. This include this prompt. Write the plan in a new directory @doc. Commit the plan. Remember to include the prompts in the commit message",
+      "phase": "Planning"
+    },
+    {
+      "sha": "8c811d35f690c711b011426edae7ed366db95dba",
+      "shaShort": "8c811d3",
+      "author": "Michael Arnoldus <ma@goodmonday.io>",
+      "timestamp": "2025-11-27T07:05:03+01:00",
+      "timestampReadable": "27. nov 2025, 07:05",
+      "summary": "Run /init to generate CLAUDE.md",
+      "fullMessage": "Initial setup command to analyze codebase and generate CLAUDE.md documentation file for future Claude Code instances.",
+      "prompt": null,
+      "phase": "Setup"
+    },
+    {
+      "sha": "1f10850a8fff9928c19d2a1d72d54296dbacf7b7",
+      "shaShort": "1f10850",
+      "author": "Michael Arnoldus <ma@goodmonday.io>",
+      "timestamp": "2025-11-27T06:56:59+01:00",
+      "timestampReadable": "27. nov 2025, 06:56",
+      "summary": "Initial commit: PRD",
+      "fullMessage": "Initial commit with Product Requirements Document for the AI for SGAV workshop site project.",
+      "prompt": null,
+      "phase": "Setup"
+    }
+  ]
+}
