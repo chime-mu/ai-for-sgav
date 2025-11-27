@@ -1,0 +1,211 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2024-11-27",
+    "workshopDuration": "150 minutes"
+  },
+  "slides": [
+    {
+      "id": "three-types",
+      "slideNumber": 1,
+      "title": "De tre slags",
+      "keywords": "Pixie dust, Troldmandens lærling, En ny verden",
+      "details": "Der er tre måder AI påvirker vores arbejde som udviklere: Som 'magic pixie dust' - features i produkter vi bygger. Som 'troldmandens lærling' - kraftfulde værktøjer der kan gå galt uden forståelse. Og som 'en helt ny verden' - fundamentale ændringer vi ikke fuldt ud kan forudse endnu.",
+      "image": "images/slides/slide-01-three-types.jpg",
+      "imageAlt": "Tidlige biler der ligner hestevogne",
+      "duration": "~2 minutes"
+    },
+    {
+      "id": "pixie-dust",
+      "slideNumber": 2,
+      "title": "Magic pixie dust",
+      "keywords": "AI som feature i produktet",
+      "details": "Dette er AI som en feature i de produkter vi bygger. Chatbots, anbefalingsmotorer, billedgenkendelse. Det er spændende, men det er ikke hvad denne workshop handler om. Vi fokuserer på AI som værktøj til at skrive kode.",
+      "image": "images/slides/slide-02-pixie-dust.jpg",
+      "imageAlt": "Glimmer og tryllestav",
+      "duration": "~2 minutes"
+    },
+    {
+      "id": "sorcerer-apprentice",
+      "slideNumber": 3,
+      "title": "Troldmandens lærling",
+      "keywords": "Fantastisk, men farligt uden forståelse",
+      "details": "AI-kodningsværktøjer er som troldmandens lærling i Fantasia. De kan gøre utrolige ting, men uden forståelse og kontrol kan de skabe kaos. De genererer kode lynhurtigt, men koden er ikke altid korrekt, sikker eller vedligeholdelsesvenlig. Det kræver ekspertise at bruge dem effektivt.",
+      "image": "images/slides/slide-03-sorcerer-apprentice.jpg",
+      "imageAlt": "Mickey Mouse med koste og kaos",
+      "duration": "~3 minutes"
+    },
+    {
+      "id": "new-world",
+      "slideNumber": 4,
+      "title": "En helt ny verden",
+      "keywords": "Vi forstår ikke hvad der kommer",
+      "details": "De tidligste biler lignede hestevogne - fordi det var den eneste reference folk havde. På samme måde bruger vi AI til at gøre de samme ting hurtigere, men sandsynligheden er stor for at AI vil ændre hele måden vi udvikler software på. Vi kan ikke fuldt ud forudse hvordan.",
+      "image": "images/slides/slide-04-new-world.jpg",
+      "imageAlt": "Hestevogn der transformeres til moderne bil",
+      "duration": "~3 minutes"
+    },
+    {
+      "id": "careful-with-that-axe",
+      "slideNumber": 5,
+      "title": "Careful with that axe",
+      "keywords": "AI forstærker det der allerede er der",
+      "details": "Hvis I har stærke praksisser, god arkitektur og solid forståelse, vil AI accelerere jer enormt. Hvis ikke, vil den accelerere vejen mod kaos. AI er en forstærker - den gør det gode bedre og det dårlige værre. En økse i hænderne på en ekspert tømrer er et præcisionsværktøj. Samme økse i utrænede hænder er farligt.",
+      "image": "images/slides/slide-05-axe.jpg",
+      "imageAlt": "En skarp økse",
+      "duration": "~4 minutes"
+    },
+    {
+      "id": "structure-chaos",
+      "slideNumber": 6,
+      "title": "Struktur vs. kaos",
+      "keywords": "God kodebase + AI = hurtigere. Dårlig + AI = hurtigere rod",
+      "details": "En velstruktureret kodebase med klare konventioner, god dokumentation og tests gør AI-værktøjer meget mere effektive. De kan forstå konteksten og generere relevant kode. I en kaotisk kodebase vil AI ofte foreslå kode der passer ind i kaosset - og gøre det værre.",
+      "image": "images/slides/slide-06-structure-chaos.jpg",
+      "imageAlt": "Kontrast mellem organiseret og kaotisk kode",
+      "duration": "~3 minutes"
+    },
+    {
+      "id": "it-works-it-doesnt",
+      "slideNumber": 7,
+      "title": "Det er fantastisk / Det virker ikke",
+      "keywords": "Begge dele er sande",
+      "details": "Alle der bruger AI-kodningsværktøjer har dage hvor det føles magisk - hele features der skrives på minutter. Og dage hvor det er frustrerende og ubrugeligt. Begge oplevelser er valide og normale. Nøglen er at lære hvornår AI er effektiv, og hvornår det er bedre at skrive koden selv.",
+      "image": "images/slides/slide-07-it-works.jpg",
+      "imageAlt": "To ansigter - begejstret og frustreret",
+      "duration": "~3 minutes"
+    },
+    {
+      "id": "no-experts",
+      "slideNumber": 8,
+      "title": "Ingen er ekspert",
+      "keywords": "Alle kan blive gode til det her",
+      "details": "Dette felt er så nyt at der ikke er nogen rigtige eksperter endnu. De bedste praksisser bliver stadig defineret. Det betyder at alle - uanset erfaring - har mulighed for at blive dygtige til det. Der er ingen 10 års erfaring at komme bagud med. Eksperimenter, lær og del jeres opdagelser.",
+      "image": "images/slides/slide-08-no-experts.jpg",
+      "imageAlt": "Tomt podium eller spejl",
+      "duration": "~2 minutes"
+    },
+    {
+      "id": "practical-techniques",
+      "slideNumber": 9,
+      "title": "Praktiske teknikker",
+      "keywords": "Planlæg, byg kontekst, retry, feedback",
+      "details": "Fire nøgleteknikker: 1) Planlæg før du prompter - tænk over hvad du vil have. 2) Byg kontekst - giv AI relevant information om din kodebase. 3) Retry - første svar er sjældent det bedste, bed om forbedringer. 4) Giv feedback - hvis noget er forkert, forklar hvorfor. AI lærer af kontekst, ikke af træning.",
+      "image": "images/slides/slide-09-practical-techniques.jpg",
+      "imageAlt": "Fire ikoner for hver teknik",
+      "duration": "~5 minutes"
+    },
+    {
+      "id": "have-fun",
+      "slideNumber": 10,
+      "title": "Hav det sjovt",
+      "keywords": "Læring kræver frihed til at lege",
+      "details": "Den bedste måde at lære AI-kodning på er gennem eksperimenter og leg. Byg noget tosset. Prøv det absurde. Se hvad der sker når du prompter på mærkelige måder. Læring sker ikke kun gennem strukturerede øvelser, men også gennem nysgerrighed og exploration. I dag har I frihed til at lege - brug den.",
+      "image": "images/slides/slide-10-have-fun.jpg",
+      "imageAlt": "Legende figurer eller farverige former",
+      "duration": "~2 minutes"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "hello-world",
+      "title": "Hello World",
+      "difficulty": "beginner",
+      "category": "Start her",
+      "shortDescription": "Få en simpel Angular-komponent til at køre med AI-hjælp.",
+      "fullDescription": "Etablér at dit setup virker, og at du kan gå fra prompt til fungerende kode.\n\nTrin:\n1. Opret ny komponent med `ng generate component hello`\n2. Prompt til din AI: 'Lav en komponent der viser Hello World med dit navn'\n3. Copy-paste koden\n4. Start dev server med `ng serve`\n5. Tjek resultatet i browseren\n\nReflektér: Hvor præcis var AI'en? Skulle du justere noget?",
+      "estimatedTime": "15 minutter"
+    },
+    {
+      "id": "build-form",
+      "title": "Byg en formular",
+      "difficulty": "beginner",
+      "category": "Start her",
+      "shortDescription": "Lav en formular med validering.",
+      "fullDescription": "Simpelt nok til at du kan blive færdig, komplekst nok til at du ser hvordan AI håndterer rigtige krav.\n\nKrav til formularen:\n- Navn (påkrævet, min 2 tegn)\n- Email (påkrævet, gyldig email)\n- Besked (valgfri, max 500 tegn)\n- Submit-knap der kun er aktiv når formen er valid\n- Vis valideringsfejl tydeligt\n\nPrompt-forslag: 'Lav en Angular reactive form med validering for navn, email og besked. Vis fejlbeskeder under hvert felt.'\n\nReflektér: Brugte AI'en reactive eller template-driven forms? Var valideringen komplet?",
+      "estimatedTime": "25 minutter"
+    },
+    {
+      "id": "build-test-suite",
+      "title": "Byg en test-suite",
+      "difficulty": "intermediate",
+      "category": "Test og kvalitet",
+      "shortDescription": "Tag eksisterende kode og få AI til at generere tests.",
+      "fullDescription": "Evaluér bagefter: Fangede den edge cases? Forstod den intentionen?\n\nTrin:\n1. Vælg en komponent eller service fra din kodebase (eller brug en udleveret)\n2. Prompt: 'Generer unit tests for denne komponent. Dæk happy path og edge cases.'\n3. Kør tests med `ng test`\n4. Analyser resultatet:\n   - Hvilke tests passerer?\n   - Hvilke edge cases fangede AI'en?\n   - Hvilke mangler?\n   - Er testkoden læsbar?\n\nBonus: Bed AI'en om at forbedre tests der mangler edge cases.",
+      "estimatedTime": "30 minutter"
+    },
+    {
+      "id": "find-bugs",
+      "title": "Find fejlene",
+      "difficulty": "intermediate",
+      "category": "Test og kvalitet",
+      "shortDescription": "Du får kode med fejl. Brug AI til at finde og rette dem.",
+      "fullDescription": "Bonus: Hvordan prompter du for at få brugbar debugging-hjælp i stedet for bare 'her er ny kode'?\n\nTrin:\n1. Tag kode med kendte fejl (lav dem selv eller brug udleveret kode)\n2. Prøv forskellige prompt-strategier:\n   - 'Ret fejlene i denne kode'\n   - 'Forklar hvad der er galt med denne kode'\n   - 'Debug denne kode step-by-step'\n3. Sammenlign resultater fra forskellige tilgange\n\nReflektér: Hvilken prompt-stil gav mest læring? Hvilken gav hurtigst fix?",
+      "estimatedTime": "25 minutter"
+    },
+    {
+      "id": "upgrade-angular",
+      "title": "Opgrader til Angular 19",
+      "difficulty": "advanced",
+      "category": "Den virkelige verden",
+      "shortDescription": "Tag et ældre Angular-projekt og brug AI til at hjælpe med migrering.",
+      "fullDescription": "Her er AI stærk - og her bryder den selvsikkert ting.\n\nAdvarsel: Lav dette i en separat branch eller kopi af projektet!\n\nTrin:\n1. Find et ældre Angular projekt (v15-18)\n2. Prompt: 'Hjælp mig med at opgradere dette Angular projekt til v19. Hvad er breaking changes?'\n3. Følg AI'ens vejledning step-by-step\n4. Dokumentér hvad der virker og hvad der fejler\n\nReflektér: Hvor var AI'en præcis? Hvor var den overselvsikker? Hvad skulle du google selv?",
+      "estimatedTime": "45 minutter"
+    },
+    {
+      "id": "document-code",
+      "title": "Dokumentér det her",
+      "difficulty": "intermediate",
+      "category": "Den virkelige verden",
+      "shortDescription": "Tag udokumenteret kode og generér dokumentation.",
+      "fullDescription": "Evaluér bagefter: Er den præcis? Brugbar? Ville en ny udvikler faktisk forstå koden ud fra det her?\n\nTrin:\n1. Find en kompleks service eller komponent uden dokumentation\n2. Prompt: 'Skriv JSDoc kommentarer for denne kode. Forklar formål, parametre og returværdier.'\n3. Generer også en README:\n   - Hvad gør koden?\n   - Hvordan bruges den?\n   - Hvad er vigtige edge cases?\n\nReflektér: Er dokumentationen korrekt? Ville den hjælpe en ny udvikler? Hvad mangler?",
+      "estimatedTime": "30 minutter"
+    },
+    {
+      "id": "code-roast",
+      "title": "Code Roast",
+      "difficulty": "intermediate",
+      "category": "Ødelæg ting (med vilje)",
+      "shortDescription": "Få AI til at gennemgå og håne din kode.",
+      "fullDescription": "Vend det så om: Indsæt bevidste fejl og se om AI fanger dem.\n\nDel 1 - Roast:\nPrompt: 'Gennemgå denne kode kritisk. Hvad er dårligt? Hvad ville du gøre anderledes? Vær ærlig.'\n\nDel 2 - Test AI'ens kritiske sans:\n1. Tag god kode og indsæt bevidste problemer:\n   - Security issues (XSS, injection)\n   - Performance problemer (unødvendige loops)\n   - Memory leaks\n   - Dårlige patterns\n2. Prompt: 'Gennemgå denne kode. Er der problemer?'\n3. Tjek om AI'en fanger dine bevidste fejl\n\nReflektér: Hvad fangede AI'en? Hvad missede den? Er den for positiv eller tilpas kritisk?",
+      "estimatedTime": "35 minutter"
+    },
+    {
+      "id": "ugly-ui",
+      "title": "Den grimmeste UI der virker",
+      "difficulty": "beginner",
+      "category": "Ødelæg ting (med vilje)",
+      "shortDescription": "Byg den mest visuelt forfærdelige brugerflade du kan - men den skal virke og bestå tilgængelighedstjek.",
+      "fullDescription": "Absurd begrænsning, overraskende lærerigt.\n\nRegler:\n1. UI'en skal være så grim som muligt (farver, fonts, layout)\n2. Den skal være fuldt funktionel\n3. Den skal bestå WCAG accessibility checks\n4. All interaktive elementer skal virke med keyboard\n\nPrompt-forslag: 'Lav en Angular komponent med en formular. Gør den så grim som muligt men stadig accessible.'\n\nBonus: Bed AI'en om at gøre den grimme UI pæn bagefter. Hvor stor er forskellen?\n\nReflektér: Hvad lærte du om accessibility? Om AI's forståelse af design?",
+      "estimatedTime": "30 minutter"
+    },
+    {
+      "id": "prompt-pair",
+      "title": "Prompt-par",
+      "difficulty": "intermediate",
+      "category": "For de ambitiøse",
+      "shortDescription": "Arbejd i par. Én prompter, den anden evaluerer.",
+      "fullDescription": "Byt roller halvvejs. Sammenlign noter om hvordan prompt-stil påvirker resultaterne.\n\nSetup:\n- Person A: Prompter\n- Person B: Evaluator\n\nRunde 1 (20 min):\n1. Vælg en opgave (f.eks. 'byg en todo-liste komponent')\n2. Person A prompter, Person B evaluerer hvert svar\n3. Person B beslutter: acceptér, afvis, eller bed om ændringer\n4. Dokumentér prompt-strategier der virker\n\nRunde 2 (20 min):\n5. Byt roller\n6. Samme opgave eller ny opgave\n\nReflektér sammen:\n- Hvilke prompt-strategier virkede bedst?\n- Hvad var forskellen mellem jeres tilgange?\n- Hvad lærte I af at observere hinandens proces?",
+      "estimatedTime": "45 minutter"
+    },
+    {
+      "id": "go-agentic",
+      "title": "Gå agentic",
+      "difficulty": "advanced",
+      "category": "For de ambitiøse",
+      "shortDescription": "Sæt Playwright MCP op til automatiseret test, eller byg en simpel agent.",
+      "fullDescription": "Kun hvis du er tryg ved det grundlæggende.\n\nOption A - Playwright MCP:\n1. Installer Model Context Protocol (MCP) server til Playwright\n2. Konfigurer din AI til at bruge den\n3. Lad AI'en skrive og køre end-to-end tests\n4. Dokumentér hvad der virker og hvad der ikke gør\n\nOption B - Simple Agent:\n1. Byg en agent der kan udføre en multi-step opgave:\n   - Læs en API\n   - Transform data\n   - Generér en rapport\n2. Agenten skal kunne håndtere fejl og retry\n\nAdvarsel: Dette er eksperimentelt. Forvent at bruge tid på setup og debugging.\n\nReflektér: Hvad kan agentic AI som normal prompting ikke kan? Hvad er trade-offs?",
+      "estimatedTime": "60+ minutter"
+    }
+  ],
+  "angularJokes": [
+    "OnInit, OnDestroy, OnPray, OnCry.",
+    "Jeg elsker Angular. Stockholm-syndrom er også kærlighed.",
+    "Why do Angular developers never get lonely? They always have a lifecycle hook to talk to.",
+    "Angular: Because simple HTML wasn't complex enough.",
+    "Dependency injection? More like dependency rejection of my will to live.",
+    "Remember when we just wrote JavaScript? Neither do I, I've been using Angular too long.",
+    "Angular forms: Making simple things complicated since 2016.",
+    "I don't always write Angular, but when I do, I inject everything."
+  ]
+}
