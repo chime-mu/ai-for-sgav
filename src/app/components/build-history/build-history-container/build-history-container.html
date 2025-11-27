@@ -1,0 +1,25 @@
+<div class="build-history-container">
+  <header class="build-history-header">
+    <h1>Sådan byggede vi dette site</h1>
+    <p class="intro">
+      Dette site blev bygget med AI-assistance. Herunder kan du se den fulde byggehistorik
+      med alle prompts, der blev brugt til at udvikle sitet.
+    </p>
+    @if (buildHistory$ | async; as buildHistory) {
+      <p class="metadata">
+        {{ buildHistory.commits.length }} commits siden
+        {{ buildHistory.metadata.lastUpdated | date:'d. MMM yyyy' }}
+      </p>
+    }
+  </header>
+
+  @if (commits$ | async; as commits) {
+    <div class="commits-list">
+      @for (commit of commits; track commit.sha) {
+        <app-commit-list-item [commit]="commit"></app-commit-list-item>
+      }
+    </div>
+  } @else {
+    <p class="loading">Indlæser byggehistorik...</p>
+  }
+</div>

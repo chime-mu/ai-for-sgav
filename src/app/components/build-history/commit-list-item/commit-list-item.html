@@ -1,0 +1,47 @@
+<div class="commit-card" [class.expanded]="expanded()">
+  <div class="commit-header" (click)="expanded.set(!expanded())">
+    <div class="commit-summary-line">
+      <span class="phase-badge" [attr.data-phase]="commit.phase">
+        {{ commit.phase }}
+      </span>
+      <h3 class="commit-summary">{{ commit.summary }}</h3>
+    </div>
+    <div class="commit-meta">
+      <time [attr.datetime]="commit.timestamp">{{ commit.timestampReadable }}</time>
+      <span class="sha">{{ commit.shaShort }}</span>
+      <button class="expand-btn" [attr.aria-expanded]="expanded()" type="button">
+        {{ expanded() ? '▲' : '▼' }}
+      </button>
+    </div>
+  </div>
+
+  @if (expanded()) {
+    <div class="commit-details">
+      <div class="detail-section">
+        <h4>Commit detaljer</h4>
+        <dl>
+          <dt>SHA:</dt>
+          <dd><code>{{ commit.sha }}</code></dd>
+          <dt>Author:</dt>
+          <dd>{{ commit.author }}</dd>
+          <dt>Tidspunkt:</dt>
+          <dd>{{ commit.timestamp | date:'full' }}</dd>
+        </dl>
+      </div>
+
+      @if (commit.fullMessage) {
+        <div class="detail-section">
+          <h4>Fuld commit besked</h4>
+          <pre class="commit-message">{{ commit.fullMessage }}</pre>
+        </div>
+      }
+
+      @if (commit.prompt) {
+        <div class="detail-section prompt-section">
+          <h4>🤖 AI Prompt brugt</h4>
+          <blockquote class="prompt">{{ commit.prompt }}</blockquote>
+        </div>
+      }
+    </div>
+  }
+</div>

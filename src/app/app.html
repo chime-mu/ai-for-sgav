@@ -6,7 +6,9 @@
 <main>
   @if (activeView() === 'slides') {
     <app-slides-container></app-slides-container>
-  } @else {
+  } @else if (activeView() === 'exercises') {
     <app-exercises-container></app-exercises-container>
+  } @else if (activeView() === 'history') {
+    <app-build-history-container></app-build-history-container>
   }
 </main>

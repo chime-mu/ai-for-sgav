@@ -1,0 +1,234 @@
+.commit-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.commit-card:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.commit-card.expanded {
+  border-color: #4a90e2;
+}
+
+.commit-header {
+  padding: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.commit-header:focus-within {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+.commit-summary-line {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.phase-badge {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.phase-badge[data-phase="Phase 1"] { background: #3b82f6; color: white; }
+.phase-badge[data-phase="Phase 2"] { background: #10b981; color: white; }
+.phase-badge[data-phase="Phase 3"] { background: #f59e0b; color: white; }
+.phase-badge[data-phase="Phase 5"] { background: #8b5cf6; color: white; }
+.phase-badge[data-phase="Documentation"] { background: #6b7280; color: white; }
+.phase-badge[data-phase="Fix"] { background: #ef4444; color: white; }
+.phase-badge[data-phase="Setup"] { background: #94a3b8; color: white; }
+.phase-badge[data-phase="Planning"] { background: #06b6d4; color: white; }
+
+.commit-summary {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  flex: 1;
+  min-width: 0;
+}
+
+.commit-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #666;
+  flex-wrap: wrap;
+}
+
+time {
+  color: #666;
+}
+
+.sha {
+  font-family: 'Courier New', Courier, monospace;
+  background: #f3f4f6;
+  padding: 0.125rem 0.375rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.expand-btn {
+  background: none;
+  border: none;
+  color: #4a90e2;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.expand-btn:hover {
+  transform: scale(1.2);
+}
+
+.expand-btn:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+.commit-details {
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem;
+  background: #f9fafb;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.detail-section {
+  margin-bottom: 1.5rem;
+}
+
+.detail-section:last-child {
+  margin-bottom: 0;
+}
+
+.detail-section h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+}
+
+dt {
+  font-weight: 600;
+  color: #555;
+}
+
+dd {
+  margin: 0;
+  color: #666;
+}
+
+dd code {
+  font-family: 'Courier New', Courier, monospace;
+  background: #f3f4f6;
+  padding: 0.125rem 0.375rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  word-break: break-all;
+}
+
+.commit-message {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: white;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: auto;
+}
+
+.prompt-section {
+  background: #fffbeb;
+  border-left: 4px solid #f59e0b;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.prompt-section h4 {
+  color: #92400e;
+}
+
+.prompt {
+  font-style: italic;
+  margin: 0;
+  color: #78350f;
+  line-height: 1.6;
+  border-left: 3px solid #fcd34d;
+  padding-left: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .commit-summary-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .commit-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .commit-header {
+    padding: 0.75rem;
+  }
+
+  .commit-details {
+    padding: 0.75rem;
+  }
+
+  dl {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  dt {
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+
+  dt:first-child {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,75 @@
+.build-history-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.build-history-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.build-history-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 1rem 0;
+}
+
+.intro {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0 0 1rem 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.metadata {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  margin: 0;
+}
+
+.commits-list {
+  margin-top: 2rem;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.125rem;
+  color: #666;
+  padding: 3rem 1rem;
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .build-history-container {
+    padding: 1rem;
+  }
+
+  .build-history-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  .commits-list {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .build-history-header h1 {
+    font-size: 3rem;
+  }
+
+  .intro {
+    font-size: 1.25rem;
+  }
+}

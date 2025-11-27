@@ -18,6 +18,14 @@
       >
         Øvelser
       </button>
+      <button
+        class="tab-button"
+        [class.active]="activeView === 'history'"
+        (click)="selectView('history')"
+        [attr.aria-current]="activeView === 'history' ? 'page' : null"
+      >
+        Byggehistorik
+      </button>
     </nav>
   </div>
 </header>

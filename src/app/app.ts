@@ -2,11 +2,12 @@ import { Component, signal, inject, OnInit } from '@angular/core';
 import { ContentLoaderService } from './services/content-loader.service';
 import { SlidesContainerComponent } from './components/slides/slides-container.component';
 import { ExercisesContainerComponent } from './components/exercises/exercises-container.component';
+import { BuildHistoryContainer } from './components/build-history/build-history-container/build-history-container';
 import { HeaderComponent, ViewType } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [SlidesContainerComponent, ExercisesContainerComponent, HeaderComponent],
+  imports: [SlidesContainerComponent, ExercisesContainerComponent, BuildHistoryContainer, HeaderComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
