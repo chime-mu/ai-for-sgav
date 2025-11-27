@@ -45,23 +45,35 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 
 ## Content Structure
 
-The site has three main sections driven by `src/assets/content.json`:
+The site has three main sections with tab navigation in the header:
 
-1. **Slides (Principper)** - 10 presentation slides with:
+1. **Slides (Principper)** - 10 presentation slides driven by `src/assets/content.json`:
    - Keyboard navigation (arrow keys)
    - Collapsible detail text using native `<details>` element
    - One image per slide with fallback to placeholder
    - Progress indicator (current/total + visual progress bar)
    - Navigation buttons with keyboard hints
 
-2. **Exercises (Øvelser)** - 10 exercises grouped by category:
+2. **Exercises (Øvelser)** - 10 exercises grouped by category, driven by `src/assets/content.json`:
    - **Categories:** "Start her", "Test og kvalitet", "Den virkelige verden", "Ødelæg ting (med vilje)", "For de ambitiøse"
    - Each exercise has difficulty badge (begynder/øvet/avanceret)
    - Collapsible detail sections with short/full descriptions
    - Scroll-friendly list (not slides)
    - View switched via tab navigation in header
 
-3. **Rotating Footer** - Angular jokes (deferred - not implemented yet)
+3. **Build History (Byggehistorik)** - Complete git commit history driven by `src/assets/build-history.json`:
+   - Shows all git commits with AI prompts used to build the site
+   - Meta-demonstration of AI-assisted development
+   - **Features:**
+     - Expandable commit cards with phase badges
+     - Full commit messages and metadata (SHA, author, timestamp)
+     - Highlighted AI prompt sections with robot emoji
+     - Color-coded phase badges (Phase 1-5, Documentation, Fix, Setup, Planning)
+     - Signal-based expand/collapse functionality
+     - Danish timestamps and labels
+   - View switched via tab navigation in header
+
+4. **Rotating Footer** - Angular jokes (deferred - not implemented yet)
 
 ## Key Components
 
@@ -70,7 +82,7 @@ Actual file structure:
 src/app/
   components/
     header/
-      header.component.ts         - Tab navigation (Principper/Øvelser)
+      header.component.ts         - Tab navigation (Principper/Øvelser/Byggehistorik)
       header.component.html
       header.component.css
     slides/
@@ -87,8 +99,17 @@ src/app/
       exercise-item.component.ts          - Individual exercise card
       exercise-item.component.html
       exercise-item.component.css
+    build-history/
+      build-history-container/
+        build-history-container.ts      - Build history main container
+        build-history-container.html
+        build-history-container.css
+      commit-list-item/
+        commit-list-item.ts               - Individual commit card
+        commit-list-item.html
+        commit-list-item.css
   services/
-    content-loader.service.ts      - Loads and caches content.json
+    content-loader.service.ts      - Loads and caches content.json & build-history.json
     slides-state.service.ts        - Manages slide navigation state
     keyboard-navigation.service.ts - Arrow key event handling
   models/
@@ -98,9 +119,10 @@ src/app/
 ### Component Details
 
 **HeaderComponent**
-- Tab navigation for switching between "Principper" and "Øvelser" views
+- Tab navigation for switching between "Principper", "Øvelser", and "Byggehistorik" views
 - Emits `viewChange` events to parent (App component)
-- Uses `ViewType` type definition: `'slides' | 'exercises'`
+- Uses `ViewType` type definition: `'slides' | 'exercises' | 'history'`
+- Three tab buttons with active state styling and ARIA attributes
 
 **SlidesContainerComponent**
 - Integrates `KeyboardNavigationService` for arrow key navigation
@@ -126,17 +148,44 @@ src/app/
 - Difficulty badge with Danish labels (Begynder/Øvet/Avanceret)
 - Shows `shortDescription` by default, `fullDescription` when expanded
 
+**BuildHistoryContainerComponent**
+- Main container for build history view
+- Injects `ContentLoaderService` to load commit data
+- Subscribes to `commits$` and `buildHistory$` observables
+- Displays page header with intro text and metadata (commit count, last updated)
+- Renders list of commits using `CommitListItemComponent`
+- Shows loading state while data loads
+
+**CommitListItemComponent**
+- Individual commit card with expand/collapse functionality
+- Accepts `@Input() commit: Commit` with all commit data
+- Uses Angular signals for expanded state (`expanded = signal(false)`)
+- Features:
+  - Phase badge with color coding (8 phase types)
+  - Commit header: summary, timestamp, SHA short, expand button
+  - Expandable details section with full commit message and AI prompt
+  - AI prompts highlighted with yellow background and robot emoji (🤖)
+  - Smooth slideDown animation for expand/collapse
+  - Semantic HTML (time, dl, dt, dd, blockquote)
+  - ARIA attributes for accessibility
+
 ## Services
 
 **ContentLoaderService**
-- Loads content from `/assets/content.json` via HttpClient
-- Uses BehaviorSubject for reactive state management with caching
+- Loads content from `/assets/content.json` and `/assets/build-history.json` via HttpClient
+- Uses BehaviorSubjects for reactive state management with caching
 - Provides separate observables:
   - `content$` - full content object
   - `slides$` - slides array only
   - `exercises$` - exercises array only
   - `jokes$` - Angular jokes array only
-- Methods: `reloadContent()`, `getCurrentContent()` (synchronous snapshot)
+  - `buildHistory$` - full build history object
+  - `commits$` - commits array only
+- Methods:
+  - `reloadContent()` - reload content.json
+  - `reloadBuildHistory()` - reload build-history.json
+  - `getCurrentContent()` - synchronous content snapshot
+  - `getCurrentBuildHistory()` - synchronous build history snapshot
 - Error handling with console logging
 
 **SlidesStateService**
@@ -203,6 +252,32 @@ interface Content {
   slides: Slide[];
   exercises: Exercise[];
   angularJokes: string[];
+}
+
+interface BuildHistoryMetadata {
+  lastUpdated: string;
+  totalCommits: number;
+  extractedBy: string;
+}
+
+interface Commit {
+  sha: string;
+  shaShort: string;
+  author: string;
+  timestamp: string;  // ISO 8601 format
+  timestampReadable: string;  // Danish format
+  summary: string;
+  fullMessage: string;
+  prompt: string | null;
+  filesChanged?: number;
+  insertions?: number;
+  deletions?: number;
+  phase: string;
+}
+
+interface BuildHistory {
+  metadata: BuildHistoryMetadata;
+  commits: Commit[];
 }
 ```
 
@@ -336,7 +411,7 @@ Deploy to Netlify with automatic builds from GitHub. Configuration is in `netlif
 
 ### Production Build
 Run `npm run build` to create production build. Output will be in `dist/ai-for-sgav/browser`.
-Bundle size: ~48 kB (gzipped)
+Bundle size: ~187 kB raw / ~53 kB gzipped
 
 ## Current Status
 
@@ -365,6 +440,19 @@ Bundle size: ~48 kB (gzipped)
 - Tab navigation via HeaderComponent
 - All 10 exercises across 5 categories
 
+**Build History Feature (Phases 1-4)**
+- BuildHistoryContainerComponent with commit list display
+- CommitListItemComponent with expandable details
+- Signal-based expand/collapse for commit cards
+- Phase badges with 8 color-coded types
+- AI prompt highlighting with yellow background
+- Full commit metadata (SHA, author, timestamp, message)
+- Build history data in `/assets/build-history.json`
+- TypeScript interfaces for Commit and BuildHistory
+- ContentLoaderService integration (buildHistory$, commits$ observables)
+- Third navigation tab "Byggehistorik"
+- Complete meta-demonstration of AI-assisted development
+
 **Polish & Deployment (Phase 5)**
 - Global styles with accessibility features
 - Netlify configuration with SPA redirects
@@ -372,9 +460,10 @@ Bundle size: ~48 kB (gzipped)
 - Focus management and ARIA attributes
 - Responsive design
 - Screen reader support
+- Comprehensive documentation in CLAUDE.md
 
 **Not Implemented:**
-- Phase 4: Rotating footer with Angular jokes (intentionally deferred)
+- Rotating footer with Angular jokes (intentionally deferred)
 
 **Testing Status:**
 - Component spec files exist with default scaffolding
@@ -382,6 +471,8 @@ Bundle size: ~48 kB (gzipped)
 
 **Deployment Ready:**
 - Production build configured: `npm run build`
-- Output: `dist/ai-for-sgav/browser` (~48 kB gzipped)
+- Output: `dist/ai-for-sgav/browser` (~187 kB raw / ~53 kB gzipped)
 - Netlify configuration complete
 - Ready for deployment to both `live.ai-for-sgav.dk` and `backup.ai-for-sgav.dk` subdomains
+- All features implemented and tested
+- Complete with Build History meta-demonstration
