@@ -1,10 +1,43 @@
 {
   "metadata": {
-    "lastUpdated": "2025-11-27T09:30:00+01:00",
-    "totalCommits": 16,
+    "lastUpdated": "2025-11-27T09:11:48.604+00:00",
+    "totalCommits": 19,
     "extractedBy": "Claude Code - Build History extraction"
   },
   "commits": [
+    {
+      "sha": "1eebfd290eefcd985903b552dbc2e6d7ecee5487",
+      "shaShort": "1eebfd2",
+      "author": "Michael Arnoldus <ma@goodmonday.io>",
+      "timestamp": "2025-11-27T10:07:04+01:00",
+      "timestampReadable": "27. nov 2025, 10:07",
+      "summary": "feat: Add professional images for slides 1-5",
+      "fullMessage": "Processed and added 5 workshop slide images with proper sizing and documentation.\n\n**Images Added:**\n\n**Slide 1 - De tre slags (Three Types)**\n- File: slide-01-three-types.jpg (49KB)\n- Shows: Horse-head carriage patent + early automobile\n- Perfect visual for \"early cars looked like horse carriages\" concept\n\n**Slide 2 - Magic Pixie Dust**\n- File: slide-02-pixie-dust.jpg (50KB)\n- Shows: Tinkerbell sprinkling pixie dust\n- Perfect match for AI as \"magic pixie dust\" features\n\n**Slide 3 - Troldmandens lærling (Sorcerer's Apprentice)**\n- File: slide-03-sorcerer-apprentice.jpg (106KB)\n- Shows: Mickey Mouse with enchanted brooms and water buckets\n- Fantasia reference for tools that go wrong without understanding\n\n**Slide 4 - En helt ny verden (A Whole New World)**\n- File: slide-04-new-world.jpg (129KB)\n- Shows: Technical schematic of early steam-powered vehicle\n- Represents transformation we don't fully understand yet\n\n**Slide 5 - Careful with that Axe**\n- File: slide-05-axe.jpg (76KB)\n- Shows: Hand gripping axe embedded in wooden log\n- Perfect visual for AI as amplifier requiring expertise\n\n**Processing Steps:**\n1. Converted WebP files to JPG format using sips\n2. Resized all images to 800px width (maintaining aspect ratio)\n3. Renamed to match slide naming convention\n4. Optimized for web delivery (50-130KB per image)\n5. Removed unused source files\n\n**Documentation:**\n- Created IMAGE-SOURCES.md with full attributions\n- Documented sources:\n  - Disney copyright for educational use (slides 2-3)\n  - Public domain historical images (slides 1, 4)\n  - Stock photography (slide 5)\n- Listed all slides and their image status\n\n**Result:**\n- 5 slides now have professional images (slides 1-5)\n- 5 slides remain without images (slides 6-10) - gracefully hidden\n- Images load correctly with existing error handling\n- Ready for workshop presentation\n\nSlides 6-10 will continue to display without images as designed.\n\nPrompt: \"I've added 4 new image files to /src/assets/images/slides. Look at them, decide where they should go, give them a proper size and show at the relevant slides.\"\n\nAdditional context: \"I've added another one that can be used as sorcerer's apprentice\"\n(User added axe image during processing)\n\n🤖 Generated with Claude Code (https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>",
+      "prompt": "I've added 4 new image files to /src/assets/images/slides. Look at them, decide where they should go, give them a proper size and show at the relevant slides.\n\nAdditional context: \"I've added another one that can be used as sorcerer's apprentice\"",
+      "phase": "Phase 5"
+    },
+    {
+      "sha": "52909bb045f847b6023caf23e020f2a515a2dfc5",
+      "shaShort": "52909bb",
+      "author": "Michael Arnoldus <ma@goodmonday.io>",
+      "timestamp": "2025-11-27T09:53:41+01:00",
+      "timestampReadable": "27. nov 2025, 09:53",
+      "summary": "feat: Hide placeholder images that fail to load",
+      "fullMessage": "Modified slides-container component to gracefully hide images that don't exist or fail to load, preventing broken image icons from appearing in slides.\n\nChanges:\n\n**TypeScript (slides-container.component.ts):**\n- Imported `signal` from @angular/core\n- Added `imageLoaded` signal to track image load state (default: true)\n- Added `onImageError()` method to set imageLoaded to false when image fails\n- Added `onImageLoad()` method to set imageLoaded to true when image loads\n- Subscribe to currentIndex$ to reset imageLoaded signal when slide changes\n\n**Template (slides-container.component.html):**\n- Updated image conditional: `@if (slide.image && imageLoaded())`\n- Removed placeholder fallback: `(error)=\".target.src='/assets/images/placeholder.jpg'\"`\n- Added load handler: `(load)=\"onImageLoad()\"`\n- Added error handler: `(error)=\"onImageError()\"`\n\n**Result:**\n- Slides without valid images now display only title, keywords, and details\n- No broken image icons or placeholder filenames visible\n- Clean presentation ready for manually added images\n- Image section smoothly hidden/shown based on load success\n- Signal resets when navigating to new slide\n\n**Testing:**\n✅ Build succeeds with no TypeScript errors\n✅ Bundle size: 187.06 kB (53.40 kB gzipped)\n✅ Image hiding logic works with signal-based state\n\nPrompt: \"We're running out of time. I will manually find and download images. If there are no images, remove the placeholder, so it's not visible in the slide.\"\n\n🤖 Generated with Claude Code (https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>",
+      "prompt": "We're running out of time. I will manually find and download images. If there are no images, remove the placeholder, so it's not visible in the slide.",
+      "phase": "Phase 5"
+    },
+    {
+      "sha": "94487f51425792c67e68149f02abb74c77697595",
+      "shaShort": "94487f5",
+      "author": "Michael Arnoldus <ma@goodmonday.io>",
+      "timestamp": "2025-11-27T09:37:04+01:00",
+      "timestampReadable": "27. nov 2025, 09:37",
+      "summary": "docs: Update build-history.json with 5 new commits",
+      "fullMessage": "Added 5 new commits to build history:\n- a54fbb9: Add Build History update guide for future maintenance\n- d59f56e: Phase 5 - Final documentation and Build History feature completion\n- 10d5c58: Phase 3 - Build History UI components and navigation integration\n- 825ea67: Phase 2 - TypeScript models and data loading for Build History\n- c15585b: Phase 1 - Build History data extraction and JSON file creation\n\nUpdated metadata:\n- totalCommits: 11 → 16\n- lastUpdated: 2025-11-27T09:30:00+01:00\n\nValidation:\n✅ Valid JSON syntax\n✅ All 16 commits present\n✅ Commit count matches git history\n✅ Prompts extracted correctly\n✅ Danish timestamps formatted\n✅ Phase classifications assigned\n✅ Newest-first ordering maintained\n\nOnly added new commits, preserved all existing data.\n\nPrompt: \"@doc/BUILD-HISTORY-UPDATE-GUIDE.md Update the build history according to the guidelines\"\n\nNote: \"Commit and remember to add the prompt to the commit message. Do this going forward\"\n\n🤖 Generated with Claude Code (https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>",
+      "prompt": "@doc/BUILD-HISTORY-UPDATE-GUIDE.md Update the build history according to the guidelines\n\nNote: \"Commit and remember to add the prompt to the commit message. Do this going forward\"",
+      "phase": "Documentation"
+    },
     {
       "sha": "a54fbb9e9fe706cf2266be700bc47cf5fb7a9a26",
       "shaShort": "a54fbb9",
