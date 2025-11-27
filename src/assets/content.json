@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.0",
-    "lastUpdated": "2024-11-27",
+    "version": "1.1",
+    "lastUpdated": "2025-11-27",
     "workshopDuration": "150 minutes"
   },
   "slides": [
@@ -86,22 +86,82 @@
       "duration": "~2 minutes"
     },
     {
-      "id": "practical-techniques",
+      "id": "planning",
       "slideNumber": 9,
-      "title": "Praktiske teknikker",
-      "keywords": "Planlæg, byg kontekst, retry, feedback",
-      "details": "Fire nøgleteknikker: 1) Planlæg før du prompter - tænk over hvad du vil have. 2) Byg kontekst - giv AI relevant information om din kodebase. 3) Retry - første svar er sjældent det bedste, bed om forbedringer. 4) Giv feedback - hvis noget er forkert, forklar hvorfor. AI lærer af kontekst, ikke af træning.",
-      "image": "images/slides/slide-09-practical-techniques.jpg",
-      "imageAlt": "Fire ikoner for hver teknik",
-      "duration": "~5 minutes"
+      "title": "Planlægning",
+      "keywords": "Planlæg før du bygger, brug stærke modeller, skriv planen ned",
+      "details": "Planlæg før du prompter. For komplekse opgaver: overvej at bruge en stærkere model til at lave planen først. Skriv planen til en markdown-fil, så du kan rydde konteksten og arbejde videre med planen som reference. En god plan giver bedre resultater end mange tilfældige prompts.",
+      "image": "images/slides/slide-09-planning.jpg",
+      "imageAlt": "Skitse eller blueprint",
+      "duration": "~3 minutes"
+    },
+    {
+      "id": "build-context",
+      "slideNumber": 10,
+      "title": "Byg kontekst",
+      "keywords": "Giv relevant information, brug tid på kontekst, gem det i filer",
+      "details": "Giv AI'en al relevant information. Arkitekturbeslutninger, kodekonventioner, eksisterende patterns. Tid brugt på at bygge god kontekst sparer tid senere - AI'en laver færre fejl og foreslår mere relevant kode. Overvej at gemme vigtig kontekst i filer (README, ARCHITECTURE.md), så du ikke skal gentage dig selv i hver session.",
+      "image": "images/slides/slide-10-context.jpg",
+      "imageAlt": "Puslespilsbrikker der passer sammen",
+      "duration": "~3 minutes"
+    },
+    {
+      "id": "retry",
+      "slideNumber": 11,
+      "title": "Retry",
+      "keywords": "LLM laver fejl, gør retry nemt, version control",
+      "details": "Nogle gange laver LLM'en bare noget ubrugeligt. Det er normalt. Gør det nemt at prøve igen - brug version control aktivt. Commit hver gang du har noget der virker, så du altid kan vende tilbage til sidste gode tilstand og prøve igen med en anden tilgang. Første svar er sjældent det bedste svar.",
+      "image": "images/slides/slide-11-retry.jpg",
+      "imageAlt": "Pile der vender tilbage eller refresh-ikon",
+      "duration": "~2 minutes"
+    },
+    {
+      "id": "feedback-constant",
+      "slideNumber": 12,
+      "title": "Feedback - Konstant",
+      "keywords": "Løbende feedback, små skridt, tests",
+      "details": "Sørg for løbende feedback. Byg i små skridt så du kan se fremskridt og fange fejl tidligt. Skriv tests og kør dem ofte. Jo hurtigere du får feedback på om koden virker, jo hurtigere kan du justere kursen. AI er bedst når den får små, veldefinerede opgaver.",
+      "image": "images/slides/slide-12-feedback-1.jpg",
+      "imageAlt": "Feedback-loop eller cirkel",
+      "duration": "~3 minutes"
+    },
+    {
+      "id": "feedback-learning",
+      "slideNumber": 13,
+      "title": "Feedback - Læring",
+      "keywords": "LLM lærer af fejl, gem læring, markdown filer",
+      "details": "Når LLM'en fejler og prøver igen, lærer den noget i den aktuelle kontekst. Men den læring forsvinder når du starter en ny session. Hvis AI'en løser et svært problem eller lærer noget vigtigt: bed den om at skrive det ned i en markdown-fil. Næste gang du står med noget lignende, kan du inkludere den læring i din prompt.",
+      "image": "images/slides/slide-13-feedback-2.jpg",
+      "imageAlt": "Notesbog eller dokumentikon",
+      "duration": "~3 minutes"
+    },
+    {
+      "id": "mcp",
+      "slideNumber": 14,
+      "title": "MCP - Model Context Protocol",
+      "keywords": "Udvid funktionalitet, integrer systemer, eksempler",
+      "details": "MCP er en måde at give AI-værktøjer adgang til eksterne systemer og data. Det er som plugins for din AI. Eksempler: Lad Claude læse fra din database, hente data fra API'er, eller køre Playwright-tests. MCP servere kan bygges til næsten hvad som helst - filsystemer, værktøjer, tjenester. Det udvider hvad AI'en kan gøre massivt, men kræver opsætning.",
+      "image": "images/slides/slide-14-mcp.jpg",
+      "imageAlt": "Forbundne byggeklodser eller netværk",
+      "duration": "~4 minutes"
+    },
+    {
+      "id": "skills",
+      "slideNumber": 15,
+      "title": "Skills",
+      "keywords": "Genanvendelige evner, del viden, specialisering",
+      "details": "Skills er genanvendelige, delbare instruktioner til Claude. Tænk på dem som templates for opgaver du ofte laver. Eksempel: En skill til 'code review med fokus på sikkerhed' eller 'generer React tests'. Skills kan deles med dit team, så alle får samme kvalitet. De gør Claude bedre til specifikke opgaver ved at give præcise instruktioner hver gang. Læs mere: https://www.claude.com/blog/skills",
+      "image": "images/slides/slide-15-skills.jpg",
+      "imageAlt": "Værktøjskasse eller specialiserede værktøjer",
+      "duration": "~4 minutes"
     },
     {
       "id": "have-fun",
-      "slideNumber": 10,
+      "slideNumber": 16,
       "title": "Hav det sjovt",
       "keywords": "Læring kræver frihed til at lege",
       "details": "Den bedste måde at lære AI-kodning på er gennem eksperimenter og leg. Byg noget tosset. Prøv det absurde. Se hvad der sker når du prompter på mærkelige måder. Læring sker ikke kun gennem strukturerede øvelser, men også gennem nysgerrighed og exploration. I dag har I frihed til at lege - brug den.",
-      "image": "images/slides/slide-10-have-fun.jpg",
+      "image": "images/slides/slide-16-have-fun.jpg",
       "imageAlt": "Legende figurer eller farverige former",
       "duration": "~2 minutes"
     }
